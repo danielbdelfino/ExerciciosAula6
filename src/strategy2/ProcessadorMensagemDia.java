@@ -8,31 +8,31 @@ public class ProcessadorMensagemDia {
 		
 		switch (dia) {
 			case Semana.DOMINGO:
-				mensagem = new Domingo().mensagemDoDia();
+				mensagem = getMensagem(new Domingo());
 
 				break;
 			case Semana.SEGUNDA:
-				mensagem = new SegundaFeira().mensagemDoDia();
+				mensagem = getMensagem(new SegundaFeira());
 
 				break;
 			case Semana.TERCA:
-				mensagem = new TercaFeira().mensagemDoDia();
+				mensagem = getMensagem(new TercaFeira());
 
 				break;
 			case Semana.QUARTA:
-				mensagem = new QuartaFeira().mensagemDoDia();
+				mensagem = getMensagem(new QuartaFeira());
 
 				break;
 			case Semana.QUINTA:
-				mensagem = new QuintaFeira().mensagemDoDia();
+				mensagem = getMensagem(new QuintaFeira());
 
 				break;
 			case Semana.SEXTA:
-				mensagem = new SextaFeira().mensagemDoDia();
+				mensagem = getMensagem(new SextaFeira());
 
 				break;
 			case Semana.SABADO:
-				mensagem = new Sabado().mensagemDoDia();
+				mensagem = getMensagem(new Sabado());
 
 				break;
 
@@ -42,5 +42,9 @@ public class ProcessadorMensagemDia {
 		}
 
 		return mensagem;
+	}
+	
+	private String getMensagem(SemanaStrategy semanaStrategy) {
+		return semanaStrategy.mensagemDoDia();
 	}
 }

@@ -1,6 +1,6 @@
 package strategy2;
 
-public class SegundaFeira implements Semana {
+public class SegundaFeira extends SemanaStrategy {
 
 	@Override
 	public String mensagemDoDia() {
